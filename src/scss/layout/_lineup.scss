@@ -1,0 +1,90 @@
+.lineup
+{
+    background-color: $rosa;
+    padding: 2rem 0rem 4rem 0rem;
+
+    h3, .dia
+    {
+        text-align: center;
+        color: white;
+    }
+    .dia
+    {
+        text-transform: uppercase;
+        margin: 5rem 0rem;
+    }
+}
+
+.escenarios-contenedor
+{
+    @include tablet
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .nombre-escenario
+    {
+        margin-top: 0;
+        padding-top: 2rem;
+        text-align: center;
+        font-weight: lighter;
+        
+
+        &:after // Generar elemento (iconos de musica) después de .nombre-escenario
+        {
+            content: ""; // Necesario - sino el elemento no se muestra
+            display: block;
+            width: 8rem;
+            height: 6rem;
+            margin: 1rem auto 0 auto; // auto: centrado
+            background-size: 150%;
+            background-position: center center; // Alinear horizontal y verticalmente
+            background-repeat: no-repeat;
+            //background-color: white;
+        }
+    }
+}
+
+.calendario
+{
+    list-style: none;
+    font-weight: bold;
+    padding: 0;
+
+    li
+    {
+        padding: 2.4rem;
+    }
+
+    span
+    {
+        font-weight: normal;
+    }
+}
+
+.bg-verde .calendario li:nth-child(odd) // 2n + 1
+{
+    background-color: darken($verde, 10); // Toma el color y le aplica una intensidad oscura de 10%
+}
+
+.bg-amarillo .calendario li:nth-child(odd) // 2n + 1
+{
+    background-color: darken($amarillo, 20); // Toma el color y le aplica una intensidad oscura de 10%
+}
+
+.edm .nombre-escenario
+{
+    &:after
+    {
+        background-image: url("../img/icono_edm.png");
+    }
+}
+
+.rock .nombre-escenario
+{
+    &:after
+    {
+        background-image: url("../img/icono_rock.png");
+    }
+}

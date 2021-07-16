@@ -1,0 +1,44 @@
+.festival
+{
+    padding: 5rem 0rem;
+    
+    @include tablet
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr; // 2 grids (grillas)
+        column-gap: 5rem; // Separacion entre grids
+    }
+
+    &-img
+    {
+       width: 100%;
+       height: 100%; 
+    }
+}
+
+.festival-text
+{
+    display: flex; // Por default, acomoda de izquierda a derecha
+    flex-direction: column; // Ahora acomoda de arriba a abajo
+    justify-content: space-around; // Alinea verticalmente
+    align-items: center;
+
+    h2
+    {
+        margin-top: 1rem;
+        padding: 1rem;
+        border: 3px rgba(0, 0, 0, .5) dotted;
+    }
+
+    span
+    {
+        font-size: 2rem;
+        color: $rosa;
+        font-weight: bold;
+    }
+    &__info
+    {
+        font-weight: lighter;
+        line-height: 1.2; // Interlineado
+    }
+}

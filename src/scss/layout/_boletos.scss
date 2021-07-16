@@ -1,0 +1,89 @@
+.boletos
+{
+    padding: 2rem 0;
+
+    h3
+    {
+        color: white;
+        text-align: center;
+    }
+
+    p
+    {
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 3rem 0 1rem 0;
+    }
+
+    .contenedor-boletos
+    {        
+        @include mq(480px)
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+    }
+}
+
+.pase
+{
+    border-spacing: 0; // Eliminar las separaciones por default que aplican las tablas
+    width: 100%;
+
+    thead
+    {
+        background-color: $rosa;
+
+        th
+        {
+            color: white;
+            font-size: 2rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            padding: 1rem;
+        }
+    }
+
+    tbody
+    {
+        background-color: white;
+
+        td
+        {
+            padding: 0.8rem;
+            border-bottom: 1px solid #d1d1d1;
+        }
+
+        tr:last-of-type
+        {
+            td
+            {
+                border-bottom: none;
+            }
+        }
+    }
+
+    tfoot
+    {
+        color: white;
+        background-color: $morado;
+        text-align: center;
+        border-radius: 5px;
+
+        td
+        {
+            font-size: 2rem;
+            font-weight: 600;
+            padding: 1.2rem;
+
+            &:hover
+            {
+                cursor: pointer;
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,66 @@
+.video
+{
+    position: relative; // Posición padre
+    max-height: 70rem;
+    overflow: hidden;
+    
+    .overlay
+    {
+        position: absolute; // Posición del elemento dentro de la posición padre
+        width: 100%; // Establece el overlay a todo el ancho del div.video
+        height: 100%; // Estabelece el overlay a todo el alto del div.video
+        //background: linear-gradent(to top, $rosa, $amarillo);   
+
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#891c1e+0,9e37f2+60,ffffff+100&0.8+0,0.5+100 */
+        background: -moz-linear-gradient(top,  rgba(137,28,30,0.8) 0%, rgba(158,55,242,0.62) 60%, rgba(255,255,255,0.5) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(137,28,30,0.8) 0%,rgba(158,55,242,0.62) 60%,rgba(255,255,255,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(137,28,30,0.8) 0%,rgba(158,55,242,0.62) 60%,rgba(255,255,255,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc891c1e', endColorstr='#80ffffff',GradientType=0 ); /* IE6-9 */
+    }
+
+    video
+    {
+        display: block; // Elimina el borde negro debajo del video
+        width: 100%;
+    }
+}
+
+.contenido-video // <div.video> <div.overlay> <div.contenido-video>
+{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative; // v
+    z-index: 1; // Muestra el texto por encima del video para que pueda ser seleccionable
+    
+    h2
+    {
+        color: $blanco;
+        font-size: 7rem;
+        display: flex;
+        flex-direction: column; // Forzar salto de linea entre el <h2> y <span>
+        align-items: flex-start; // Fuerza el margin hacia la derecha - hasta donde terminen los textos
+    
+        span
+        {
+            font-size: 2rem;
+            background-color: $rosa;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+        }
+    }
+
+    @media(max-width: 560px)
+    {
+        h2
+        {
+            font-size: 10vw;
+
+            span
+            {
+                font-size: 4vw;
+                padding: .5rem .5rem;
+            }
+        }
+    }
+}
